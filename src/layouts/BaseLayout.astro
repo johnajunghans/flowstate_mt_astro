@@ -1,0 +1,38 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Starscape from "../components/Starscape.jsx";
+
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+    <div class="main-wrapper"> 
+        <Navbar />
+        <slot />
+        <footer>
+            <small>Copyright © <span id="copyrightYear"></span> FlowState Math Tutoring</small>
+        </footer>
+    </div>
+    <script>
+       document.querySelector('#copyrightYear')!.textContent = new Date().getFullYear().toString();
+    </script>
+</body>
+
+</html>

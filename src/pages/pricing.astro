@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/global.css';
+import Header from "../components/Header.astro";
+import Slate from "../components/Slate.astro";
+---
+
+<BaseLayout title="FlowState Math Tutoring - Pricing">
+    <Header pageHeader="Pricing">
+        <Slate>
+                <h2 class="text-yellow-underline">Base Rate</h2>
+                <br/>
+                <h3>$60 for 60 minutes; $90 for 90 minutes</h3>
+                <h6>(longer times available on request)</h6>
+        </Slate>
+        <Slate>
+            <div class="yellow-header">
+                <h2>Recurrence Discount</h2>
+            </div>
+            <br/>
+            <h3>Save 10% when scheduling a series of recurring sessions</h3>
+            <h6>($54 for 60 minutes; $81 for 90 minutes)</h6>
+        </Slate>
+        <Slate>
+            <h2 class="text-yellow-underline">Semester Package</h2>
+            <br/>
+            <h3>12 sessions for the price of 10</h3>
+            <h6>($600 for 12 60-minute sessions; $900 for 12 90-min sessions)</h6>
+        </Slate>
+
+    </Header>
+</BaseLayout>

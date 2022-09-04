@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon'
+import logo2 from "../icons/logo2.png";
+
+const navLinks = [
+    {
+        name: 'Home',
+        url: '/'
+    },
+    {
+        name: 'Meet Tony',
+        url: '/meet-tony'
+    },
+    {
+        name: 'Philosophy', 
+        url: '/philosophy'
+    },
+    {
+        name: 'Services',
+        url: '/services'    
+    },
+    {
+        name: 'Pricing',
+        url: '/pricing'   
+    }  
+]
+---
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo-wrapper">
+            <img src={ logo2 } class="logo" alt="logo">
+            
+        </div>
+        <div class="nav-wrapper">
+            
+            <ul class="nav-links" role="navigation">
+                <button class="btn btn-menu" id="menu-btn" aria-expanded="false" aria-label="Open Mobile Nav">
+                    <Icon name="menu" width={25} />
+                </button>
+                {navLinks.map(link => (
+                    <li role="none" class="btn-links">
+                        <a href={link.url} class="link">{link.name}</a>
+                    </li>
+                    ))
+                }
+                <li class="contact-bkg" id="contact-link" role="none">
+                    <a href="/contact" class="link contact-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.querySelector('#menu-btn')!;
+    menuBtn.addEventListener('click', () => {
+        menuBtn.setAttribute('aria-expanded', menuBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+    })
+</script>

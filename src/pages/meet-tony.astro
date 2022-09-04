@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/global.css';
+import Header from "../components/Header.astro";
+import { Icon } from 'astro-icon'
+import Slate from "../components/Slate.astro";
+import Accordion from "../components/Accordion.jsx";
+
+const eduExpData = [
+    {
+        key: 1,
+        title: "Bachelor of Science in Biochemisty; Minor in Math",
+        content: "lorem"
+    },
+    {
+        key: 2,
+        title: "5 Years of Experience Tutoring Math",
+        content: "lorem"
+    },
+    {
+        key: 3,
+        title: "15+ Years of Experience Working with Children K-12",
+        content: "lorem"
+    }
+]
+
+---
+
+<BaseLayout title="FlowState Math Tutoring - Meet Tony">
+    <Header pageHeader="Meet Tony">
+        <div class="photo-role-wrapper slate">
+            <div class="photo-wrapper slate">
+                <Icon name="photo" width={125} />
+            </div>
+            <div class="slate" id="role-wrapper"> 
+                <h2>Role</h2>
+                <br/>
+                <h3>Tony Junghans is the owner and primary tutor/coordinator of FlowState Math Tutoring.</h3>
+            </div> 
+        </div>
+        <Accordion data={eduExpData} header="Education & Experience" client:load/>
+        <div class="personal-info-wrapper">
+            <Slate style="float: left;">
+                <h2>Growing Up</h2>
+                <br/>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et perferendis temporibus aspernatur modi. Minima, aperiam consequatur ipsum magnam commodi odio eveniet pariatur obcaecati neque eius placeat veritatis voluptatem rerum facilis.</h3>
+            </Slate>
+            <Slate>
+                <h2>Interests & Hobbies</h2>
+                <br/>
+                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At sit ullam quibusdam obcaecati! Quas fugiat ex magnam illum sint atque expedita, cum debitis esse perspiciatis doloribus, quis neque saepe ipsa!</h3>
+            </Slate>
+        </div>
+    </Header>
+</BaseLayout>
+
+<style>
+
+    .photo-role-wrapper {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--size-2);
+        /* display: grid;
+        grid-template-columns: 1fr 2fr; */
+    }
+
+    div.photo-wrapper {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    #role-wrapper {
+      max-width: 60%;
+      padding: var(--size-2)
+    }
+
+</style>
+

@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/global.css';
+import Header from "../components/Header.astro";
+import Accordion from "../components/Accordion.jsx";
+import Slate from "../components/Slate.astro";
+
+const header1 = "During sessions, I consciously cultivate an atmosphere of..."
+const header2 = "From students, I expect..."
+
+
+const philData1 = [
+    {
+        key: 1,
+        title: "Patience",
+        content: [
+            "I believe in consciously cultivating a space within which there is no pressure to understand. ",
+            "Oftentimes, the pressure to understand something actually inhibits the process of understanding. We’re conditioned to “try” to understand, when in reality understanding happens of its own accord. For example, it is common for people to experience some previously difficult concept suddenly “clicking.”",
+            "This does not mean that there isn’t an expectation that the student is working hard and trying their best.",
+            "There is. This is something I take quite seriously.",
+            "It’s simply that there is a deliberate relaxation of the restless need to understand something immediately. Understanding tends to blossom more quickly and more completely when there is less stress and pressure to understand."
+        ]
+    }, 
+
+    {   
+        key: 2,
+        title: "Independence",
+        content: [
+            "Regardless of the subject being taught, I do my best to facilitate and expedite the student’s natural progression towards independence. Independence, in the context of scholastic endeavors typically involves doing a homework problem correctly with absolutely no assistance. This can often be a scary experience for many students who have a fear of failure (which is really a fear of rejection). In order to smooth the sometimes bumpy progression into independence, I utilize a very basic, tried and true method outlined below:",
+            "1. I Do: I show the student an example problem with detailed explanations.",
+            "2. We Do: I ask the student to do an example problem of their own but I make it clear that I am there to help and answer any questions.",
+            "3. You Do: I ask the student to do another example problem but this time make it clear that I am not going to give any feedback or assistance. I make it clear that failure (i.e. getting the question wrong) is completely normal and safe in the space of our session, and that we can review the problem in detail together if it is too challenging.",
+            "The time spent on each stage may vary, however, the goal of each and every session that I conduct is to get the student as close as possible to the final stage (You Do)."
+        ]
+    }, 
+    {
+        key: 3,
+        title: "Humor",
+        content: [
+            "I strongly believe that humor is the most important ally in the learning process.",
+            "To be clear, when I say humor, I’m not referring to knock-knock jokes or any joke with a punchline, although these can certainly have their place. Rather, I'm speaking about humor more broadly as a device to lighten the pressure that students often feel regarding their school work. Today, more than ever, many students feel tremendous pressure to perform in school.  They are told that, in addition to straight A’s and high SAT/ACT scores, their resumes must be bolstered with extracurriculars, volunteer work, sport programs, etc.",
+            "There’s nothing inherently wrong with wanting to achieve at a high level, however, this pressure often becomes an impediment to achievement due to the tendency for overly ambitious, self-flagellating students to burn out very early in their careers. When these students grow up, they often need to spend an extraordinary amount of time learning how to simply relax and play, both of which are essential as a means of recharging the internal battery which fuels work output.",
+            "The crux of the problem, as it relates to school and schoolwork, is that students begin to associate their scholastic achievement (relative to their peers) with their intrinsic value as human beings. For such a student, the stakes begin to feel disproportionately high. I say “disproportionate” because such a student begins equating “failure in school” with “failure as a human being.” Failure, in fact, becomes an identity; something that they think themselves to be. It is remarkable that even “high achieving” students often end up confessing that they felt themselves to be complete and utter failures. It is clear that this association of scholastic achievement with intrinsic value is not only unnatural but is also highly counterproductive, as it becomes an inner roadblock to achievement and work output.",
+            "To come back to humor, I use it to consciously cultivate a space of humility. I do think that it is a coincidence that the words “humor” and “humility” are so similar. Humor acts as a sword which cuts through the tension created when frustration occurs during the learning process. It is very common for students to become frustrated when learning is not happening as fast or as easily as they might think it should. This frustration is often so strangely potent because of the association outlined above. Humor, unlike anything else, can infuse the session space with the unspoken understanding that we do not have to be perfect in order to be accepted by others and by ourselves. Additionally, the students begin to learn the invaluable skill of laughing at yourself which is the essence of humility and the best friend of learning."
+        ]
+    } 
+]
+
+const philData2 = [
+    {
+        key: 1,
+        title: "Responsibility",
+        content: [
+            "hello",
+            "hello",
+            "hello"
+        ]
+    },
+    {
+        key: 2,
+        title: "Respect",
+        content: [
+            "hello",
+            "hello",
+            "hello"
+        ]
+    },
+    {
+        key: 3,
+        title: "Hard Work",
+        content: [
+            "hello",
+            "hello",
+            "hello"
+        ]
+    }
+]
+---
+
+<BaseLayout title="FlowState Math Tutoring - Philosophy">
+    <Header pageHeader="Philosophy">      
+        <Accordion data={philData1} header={header1} client:load />
+        <Accordion data={philData2} header={header2} client:load />
+    </Header>
+</BaseLayout>
+
+<style>
+    .accordion-header-text {
+        font-family: cursive;
+    }
+</style>

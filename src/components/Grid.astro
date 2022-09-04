@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon';
+
+const mathSubjects = [
+    "K-5 Math",
+    "6-7 Math",
+    "Pre-Algebra",
+    "Algebra 1",
+    "Geometry",
+    "Algebra 2",
+    "Trigonometry",
+    "Precalculus",
+    "Calculus",
+    "AB/BC Calc",
+    "AP/IB Calc",
+    "Statistics"
+];
+
+const n:number = mathSubjects.length;
+
+const rows = Math.ceil(Math.sqrt(n));
+const columns = n/rows;
+---
+
+<div class="grid-container">
+    {mathSubjects.forEach(subject => (
+        <div class="subject-wrapper">
+           <Icon name="check" width={25} />
+           <h3>{subject}</h3>
+        </div>
+    ))
+}
+</div>
+
+<style>
+
+    .grid-container {
+        display: grid;
+
+    }
+
+</style>
+
