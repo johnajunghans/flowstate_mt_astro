@@ -1,11 +1,16 @@
 import '../styles/accordion.css';
 import { useState } from 'react';
+import PatContent from "./../content/phil-patience.md";
+import reactMarkdown from 'react-markdown';
 
 
 function Accordion(props) {
 
     const data = props.data;
     const header = props.header;
+    console.log("******")
+    console.log(data)
+    console.log("******")
     // const content = props.content;
 
     const [selected, setSelected] = useState(null);
@@ -16,7 +21,7 @@ function Accordion(props) {
         }
 
         setSelected(i);
-    };
+    }
 
     return (
         <div className="accordion-wrapper slate">
@@ -31,14 +36,7 @@ function Accordion(props) {
                             <span>{selected === i ? '-' : '+'}</span>
                         </div>
                         <div className={selected === i ? 'content' : 'content hide'}>
-                            {Array.isArray(item.content)
-                            ? item.content.map((para, i) => (
-                                <div key={i} className='para-wrapper'>
-                                    <p className='para-content' id={`${item.title}-para-${i}`}>{para}</p>
-                                    <br />
-                                </div>
-                            ))
-                        : console.log(item.content,false)}
+                             <div dangerouslySetInnerHTML={{__html: item.content}} />
                         </div>
                     </div>
                 ))}
